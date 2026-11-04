@@ -7,7 +7,7 @@ public class Main {
         int answer=0;
 
         for(int i=0;i<A.length();i++){
-            for(int j=i;j<A.length();j++){
+            for(int j=i+1;j<A.length();j++){
                 if (A.charAt(i)=='(' && A.charAt(j)==')') answer++;
             }
         }
