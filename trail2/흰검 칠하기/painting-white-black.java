@@ -14,27 +14,27 @@ public class Main {
         int grey=0;
         
         for (int i = 0; i < n; i++) {
-            x[i] = sc.nextInt()+OFFSET;
+            x[i] = sc.nextInt();
             dir[i] = sc.next().charAt(0);
-            for(int j=0;j<x[i]-OFFSET;j++){
+            for(int j=0;j<x[i];j++){
                 if (dir[i]=='R'){
                     //right, black
                     cnt_b[start]++; 
                     if (cnt_b[start]>=2 && cnt_w[start]>=2) {
-                        if (j!=x[i]-OFFSET-1) start++;
+                        if (j!=x[i]-1) start++;
                         continue;
                     }
                     tile[start] = 'b';
-                    if (j!=x[i]-OFFSET-1) start++;
+                    if (j!=x[i]-1) start++;
                 }
                 else {
                     cnt_w[start]++;
                     if (cnt_w[start]>=2 && cnt_b[start]>=2) {
-                        if (j!=x[i]-OFFSET-1) start--;
+                        if (j!=x[i]-1) start--;
                         continue;
                     }
                     tile[start] = 'w';
-                    if (j!=x[i]-OFFSET-1) start--;
+                    if (j!=x[i]-1) start--;
                 }
             }
         }
